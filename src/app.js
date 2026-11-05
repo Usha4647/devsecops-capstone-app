@@ -103,7 +103,7 @@ function createApp({ config, store, metrics, publicDir = path.join(__dirname, '.
       const requested = Number(url.searchParams.get('ms') ?? 50);
       const ms = Number.isFinite(requested) ? Math.max(0, Math.min(requested, config.maxLoadMs)) : 50;
       const end = Date.now() + ms;
-      while (Date.now() < end) { /* intentional busy loop for the scaling demo */ }
+      while (Date.now() < end) { /* intentional busy loop for the scaling demonstation */ }
       return sendJson(res, 200, { status: 'completed', workMs: ms, pod: config.podName });
     }
 
